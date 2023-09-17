@@ -1,0 +1,492 @@
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// colors
+$white: #ffffff;
+$black: #000000;
+$reddish: #db1744;
+$grey: #6d6b6b;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.App {
+    height: 100%;
+    color: $white;
+
+    // Hero
+    .Hero {
+        height: 100vh;
+        background: url("./component/hero/Poster.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding-left: 10%;
+
+        nav {
+            height: 15%;
+            @include flex;
+
+            ul {
+                display: flex;
+                align-items: center;
+                width: 100%;
+
+                li {
+                    list-style: none;
+                    cursor: pointer;
+
+                    &:nth-child(2) {
+                        margin-left: 13%;
+
+                        & input {
+                            border: none;
+                            outline: none;
+                            border: 1px solid $white;
+                            border-radius: 10px;
+                            background: url("./component//hero/Search.png");
+                            background-repeat: no-repeat;
+                            background-position: right;
+                            height: 35px;
+                            width: 300%;
+                            color: $white;
+                            font-size: 12px;
+                            padding-left: 15px;
+
+                            &::placeholder {
+                                color: $white;
+                                font-size: 12px;
+                                padding-left: 5px;
+                            }
+                        }
+
+                    }
+
+                    &:nth-child(3) {
+                        margin-right: 3%;
+                        margin-left: 35%;
+                    }
+
+                    &:last-child {
+                        @include flex;
+
+                    }
+                }
+            }
+        }
+
+        // Info
+        .Info {
+            height: 85%;
+            width: 50%;
+            font-size: 15px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+
+            p:first-child {
+                font-size: 30px;
+                padding-bottom: 22px;
+            }
+
+            p:nth-child(2) {
+                padding-bottom: 12px;
+                display: flex;
+                align-items: center;
+                font-size: 15px;
+
+                & img {
+                    padding-right: 5px;
+                }
+
+                span {
+                    margin-left: 3%;
+                }
+            }
+
+            p:nth-child(3) {
+                padding-right: 20%;
+                line-height: 25px;
+
+                & button {
+                    height: 35px;
+                    width: 150px;
+                    border: none;
+                    outline: none;
+                    margin-top: 15px;
+                    border-radius: 5px;
+                    @include flex;
+                    background-color: $reddish ;
+                    color: $white;
+                    font-size: 12px;
+                    cursor: pointer;
+
+                    img {
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    // Featured
+    .Featured {
+        height: 320vh;
+        padding-top: 50px;
+
+        .Title {
+            height: 5%;
+            @include flex;
+            gap: 60%;
+            font-size: 22px;
+            color: $black ;
+            font-weight: 600;
+
+            & span {
+                color: $reddish;
+                display: flex;
+                justify-content: center;
+                font-size: 13px;
+                font-weight: lighter;
+                cursor: pointer;
+            }
+        }
+
+        .List {
+            height: 95%;
+            padding: 0 8%;
+
+            ol {
+                height: 100%;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                place-items: center;
+
+                li {
+                    list-style: none;
+                    height: 400px;
+                    width: 83%;
+                    color: $black;
+                    font-size: 10px;
+                    cursor: pointer;
+                    transition: width 0.2s ease-in-out;
+
+                    &:hover {
+
+                        width: 85%;
+                    }
+
+
+                    #Favourite {
+                        float: right;
+                        margin: 10px 10px 0 0;
+                        border-radius: 100%;
+                    }
+
+                    div {
+                        &:first-child {
+                            height: 80%;
+                            background-size: cover;
+                        }
+
+                        &:last-child {
+                            padding-top: 5px;
+                            height: 20%;
+
+                            .Date,
+                            .Genre {
+                                color: $grey;
+                            }
+
+                            .Name {
+                                font-size: 13px;
+                                font-weight: bold;
+                            }
+
+                            & p {
+                                padding-bottom: 5px;
+
+                                &:nth-child(3) {
+                                    display: flex;
+                                    justify-content: flex-start;
+
+
+                                    img {
+                                        padding-right: 5px;
+                                    }
+
+                                    span {
+                                        padding-left: 30%;
+
+                                    }
+                                }
+                            }
+
+                        }
+
+                    }
+
+                }
+            }
+        }
+    }
+
+    // Footer
+    .Foot {
+        height: 20%;
+        margin-top: 100px;
+
+        div {
+            @include flex;
+            height: 33%;
+
+            ul {
+                @include flex;
+                gap: 20px;
+
+                li {
+                    list-style: none;
+                    color: $black;
+                    cursor: pointer;
+                }
+            }
+
+            &:last-child {
+                color: $black;
+            }
+        }
+    }
+}
+
+// RESPONSIVENESS
+@media screen and (max-width:1100px) {
+
+    .App {
+        height: 100vh;
+        color: $white;
+
+        // Hero
+        .Hero {
+            nav {
+                ul {
+                    li {
+                        &:nth-child(2) {
+                            margin-left: 8%;
+
+                            & input {
+                                width: 250%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // Featured
+        .Featured {
+            height: 460vh;
+
+            .Title {
+                gap: 50%;
+                margin-bottom: -50px;
+            }
+
+            .List {
+                height: 95%;
+                padding: 0 8%;
+
+                ol {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+            }
+        }
+    }
+
+    .Foot {
+        margin-top: 0;
+        height: 300px;
+    }
+}
+
+@media screen and (max-width:880px) {
+
+    .App {
+        .Hero {
+            nav {
+                ul {
+                    li {
+                        &:nth-child(2) {
+                            margin-left: 8%;
+
+                            & input {
+                                width: 200%;
+                            }
+                        }
+
+                        &:nth-child(3) {
+                            margin-left: 25%;
+                        }
+                    }
+                }
+            }
+
+            .Info {
+                width: 60%;
+            }
+        }
+    }
+}
+
+// Mobile
+@media screen and (max-width:685px) {
+
+    .App {
+        .Hero {
+            nav {
+                ul {
+                    li {
+                        &:nth-child(2) {
+                            margin-left: 8%;
+
+                            & input {
+                                width: 150%;
+                            }
+                        }
+
+                        &:nth-child(3) {
+                            display: none;
+                        }
+
+                        &:last-child {
+                            margin-left: 20%;
+                        }
+                    }
+                }
+            }
+
+            .Info {
+                width: 70%;
+
+                &:first-child {
+                    font-size: 13px;
+                }
+
+                p {
+                    &:first-child {
+                        font-size: 25px;
+                    }
+                }
+            }
+        }
+
+        // Featured
+        .Featured {
+            height: 720vh;
+
+            .Title {
+                gap: 38%;
+            }
+
+            .List {
+                ol {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+        }
+    }
+}
+
+// Mobile(smaller screen)
+@media screen and (max-width:550px) {
+
+    .App {
+
+        // hero
+        .Hero {
+            nav {
+                ul {
+                    li {
+                        &:nth-child(2) {
+                            display: none;
+                        }
+
+                        &:last-child {
+                            margin-left: 45%;
+                        }
+                    }
+                }
+            }
+
+            .Info {
+                width: 100%;
+            }
+        }
+
+        // Featured
+        .Featured {
+            height: 1600vh;
+
+            .Title {
+                height: 3%;
+                gap: 20%;
+            }
+
+            .List {
+                ol {
+                    grid-template-columns: repeat(1, 1fr);
+
+                    li {
+                        margin: 10px 0;
+                        height: 450px;
+                        font-size: large;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+@media screen and (max-width:390px) {
+
+    .App {
+        .Hero {
+            padding-left: 5%;
+
+            nav {
+                ul {
+                    li {
+
+                        &:last-child {
+                            margin-left: 37%;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Featured
+        .Featured {
+            height: 1600vh;
+
+            .List {
+                ol {
+                    li {
+                        height: 380px;
+                    }
+                }
+
+            }
+        }
+    }
+}
