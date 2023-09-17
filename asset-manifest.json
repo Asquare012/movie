@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Asquare012/movie/static/css/main.86dc9dc2.css",
+    "main.js": "/Asquare012/movie/static/js/main.1e9859fa.js",
+    "static/media/Poster.png": "/Asquare012/movie/static/media/Poster.a37f7a10b6a2578ccf01.png",
+    "index.html": "/Asquare012/movie/index.html",
+    "main.86dc9dc2.css.map": "/Asquare012/movie/static/css/main.86dc9dc2.css.map",
+    "main.1e9859fa.js.map": "/Asquare012/movie/static/js/main.1e9859fa.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.86dc9dc2.css",
+    "static/js/main.1e9859fa.js"
+  ]
+}
