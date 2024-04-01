@@ -1,0 +1,114 @@
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Showing {
+    height: 370px;
+    width: 100%;
+    padding: 20px 0 0 0;
+
+    .Showing-Top {
+        height: 10%;
+        @include flex;
+        padding: 0 5%;
+        margin-bottom: 30px;
+
+        .Top-Left {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            font-size: 17px;
+            font-weight: 700;
+            color: #110E47;
+        }
+
+        .Top-Right {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            span {
+                border: 1px solid #AAA9B1;
+                color: #AAA9B1;
+                padding: 3px 5px;
+                border-radius: 15px;
+                cursor: pointer;
+                font-weight: 500;
+                transition: transform ease-in-out 0.2s;
+                font-size: 12px;
+
+                &:hover,
+                &:active {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+
+    .Showing-Bottom {
+        height: 90%;
+
+        ol {
+            height: 100%;
+            @include flex;
+            gap: 20px;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            scroll-behavior: smooth;
+            padding: 0 5%;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            li {
+                list-style-type: none;
+                height: 100%;
+                min-width: 140px;
+                transition: transform ease-in-out 0.2s;
+
+
+                &:hover {
+                    transform: scale(1.05);
+                }
+
+                .Bottom-Image {
+                    height: 70%;
+
+                    img {
+                        border-radius: 15px;
+                        box-shadow: #979797 2px 2px 3px;
+                    }
+                }
+
+                .Bottom-Title {
+                    margin-top: 5px;
+                    display: flex;
+                    align-items: center;
+                    font-size: 15px;
+                    font-weight: 700;
+                    margin: 10px 0;
+                    padding-left: 1%;
+                }
+
+                .Bottom-Review {
+                    display: flex;
+                    align-items: center;
+                    font-size: 13px;
+                    font-weight: 400;
+                    color: #161616;
+                    font-weight: 400;
+
+                    img {
+                        margin-right: 3px;
+                    }
+                }
+            }
+        }
+    }
+}

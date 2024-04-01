@@ -1,0 +1,214 @@
+@mixin flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Mulish", sans-serif;
+    font-optical-sizing: auto;
+}
+
+
+.Review {
+    height: 500px;
+    width: 100%;
+
+    .Top {
+        height: 370px;
+        width: 100%;
+
+        .Top-Nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            height: 15%;
+        }
+
+        .Trailer {
+            height: 80%;
+
+
+            iframe {
+                border: none;
+                border-radius: 10px;
+                box-shadow: 2px 2px 2px grey;
+            }
+        }
+    }
+
+    .Description {
+        height: 400px;
+        background-color: #ffffff;
+        padding: 0 5%;
+        padding-top: 20px;
+        border-radius: 30px 30px 0 0;
+
+        .First {
+            .Title {
+                font-size: 20px;
+                font-weight: 700;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 10px;
+                color: #110E47;
+            }
+
+            .Rating {
+                display: flex;
+                align-items: center;
+                font-size: 14px;
+                color: #161616;
+                font-weight: 500;
+
+                img {
+                    margin-right: 5px;
+                }
+            }
+
+            .Genre {
+                margin: 10px 10px 5px 0;
+                display: flex;
+
+                span {
+                    background-color: #DBE3FF;
+                    color: #88A4E8;
+                    height: 18px;
+                    width: auto;
+                    padding: 2px 8px;
+                    border-radius: 20px;
+                    font-weight: 600;
+                    margin-right: 5px;
+                    font-size: 13px;
+                    @include flex;
+                }
+            }
+
+            .Info {
+                height: 70px;
+                display: flex;
+                gap: 10%;
+                align-items: center;
+
+                .Info-Item {
+                    font-size: 15px;
+                    color: #000000;
+                    font-weight: 600;
+
+                    span {
+                        margin-top: 5px;
+                        color: #161616;
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+
+    .Second {
+        height: auto;
+        font-size: 14px;
+        margin-top: 20px;
+        color: #161616;
+        font-weight: 300;
+        line-height: 22px;
+        word-spacing: 3px;
+        margin-bottom: 30px;
+
+        h2 {
+            margin: 10px 0;
+            color: #110E47;
+            font-weight: 800;
+            font-size: 17px;
+        }
+    }
+
+    .Third {
+        .Cast-Top {
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+
+            .Top-Left {
+                width: 50%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                font-size: 17px;
+                font-weight: 700;
+                color: #110E47;
+            }
+
+            .Top-Right {
+                width: 50%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                font-size: 12px;
+
+                span {
+                    border: 1px solid #AAA9B1;
+                    color: #1a1919;
+                    padding: 3px 5px;
+                    border-radius: 15px;
+                    cursor: pointer;
+                    font-weight: 500;
+                    transition: transform ease-in-out 0.2s;
+
+
+                    &:hover,
+                    &:active {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+
+        .Cast-Bottom {
+            margin-top: 20px;
+
+            ol {
+                height: 150px;
+                display: flex;
+
+                li {
+                    list-style: none;
+                    height: 100px;
+                    width: 30%;
+                    margin-right: 5px;
+                    color: #161616;
+                    font-weight: 300;
+                    transition: transform 0.2s ease-in-out;
+
+                    &:hover,
+                    &:active {
+                        transform: scale(1.05);
+                    }
+
+                    img {
+                        height: 85%;
+                        width: 100%;
+                        border-radius: 10px;
+                    }
+
+                    .Name {
+                        height: 15%;
+                        color: #110E47;
+                        font-size: 13px;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:600px) {
+    .Review {
+        width: 100%;
+    }
+}

@@ -1,0 +1,153 @@
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Popular {
+    width: 100%;
+    padding-top: 60px;
+
+    .Popular-Top {
+        height: 50px;
+        padding: 0 5%;
+        display: flex;
+
+        .Top-Left {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            font-size: 17px;
+            font-weight: 800;
+            color: #110E47;
+        }
+
+        .Top-Right {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            font-size: 12px;
+
+            span {
+                border: 1px solid #AAA9B1;
+                color: #AAA9B1;
+                padding: 3px 5px;
+                border-radius: 15px;
+                cursor: pointer;
+                font-weight: 500;
+                transition: transform ease-in-out 0.2s;
+
+                &:hover,
+                &:active {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+
+    .Popular-Mid {
+        height: 50px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding-left: 5%;
+
+        input {
+            height: 75%;
+            width: 95%;
+            border: none;
+            outline: none;
+            background-color: #dadada;
+
+            font-size: 13px;
+            padding-left: 10px;
+            color: #000000;
+            font-weight: 700;
+            border-radius: 5px;
+
+            &::placeholder {
+                font-size: 13px;
+                padding-left: 5px;
+                color: #000000;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .Popular-Bottom {
+        height: 90%;
+        margin-top: 20px;
+        padding-left: 5%;
+
+        ol {
+            height: 100%;
+
+            li {
+                list-style: none;
+                margin: 0 0 10px 0;
+                display: flex;
+                height: 160px;
+
+                .Bottom-Left {
+                    display: flex;
+                    align-items: center;
+
+                    img {
+                        border-radius: 20px;
+                    }
+                }
+
+                .Bottom-Right {
+                    padding: 0 2% 0 8px;
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+
+                    div {
+                        display: flex;
+                        align-items: center;
+
+                        &:not(:last-child) {
+                            margin-bottom: 10px;
+                        }
+                    }
+
+                    .Title {
+                        font-weight: 700;
+                        font-size: 16px;
+                        margin-bottom: 15px;
+                    }
+
+                    .Rating {
+                        font-size: 13px;
+                        font-weight: 400;
+                        color: #161616;
+                        font-weight: 300;
+
+                        img {
+                            margin-right: 3px;
+                        }
+                    }
+
+                    .Overview {
+                        height: 10px;
+                        font-size: 13px;
+                    }
+
+                    .Release-date {
+                        font-size: 12px;
+                        color: #161616;
+                        font-weight: 300;
+
+                        img {
+                            margin-right: 3px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
