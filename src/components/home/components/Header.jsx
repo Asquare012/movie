@@ -1,6 +1,6 @@
 import Menu from "../assets/Menu.png";
 import Notification from "../assets/Notif.png";
-import "./styles/Header.scss";
+import "../styles/Header.scss";
 
 const Header = () => {
   return (
@@ -10,7 +10,7 @@ const Header = () => {
           <li>
             <img src={Menu} alt="menu" height="28px" />
           </li>
-          <li>MOVIES</li>
+          <li>REVIEWER</li>
           <li>
             <img src={Notification} alt="notification" height="28px" />
           </li>

@@ -1,22 +1,14 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-const Trailer = () => {
+const MovieTrailer = () => {
   const { id } = useParams();
   const [trailer, setTrailer] = useState([]);
 
-  const options = {
-    method: "GET",
-    headers: {
-      accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3MjIyMmM5OTI0Yzc2OTlkZmNkODkxYzYzOTU1MzBmMCIsInN1YiI6IjY1MDBlMjYzZjI5ZDY2MDEzYTNiM2U5MiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.weQOfRExY3OF3lcYVrp7-ShSHpelM0AUGhxoUObDblM",
-    },
-  };
-
   const getTrailer = () => {
-    const url = `https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`;
-    fetch(url, options)
+    const url = `https://api.themoviedb.org/3/movie/${id}/videos?language=en-US&api_key=72222c9924c7699dfcd891c6395530f0`;
+
+    fetch(url)
       .then((response) => response.json())
       .then((data) => {
         setTrailer(data.results);
@@ -54,4 +46,4 @@ const Trailer = () => {
   );
 };
 
-export default Trailer;
+export default MovieTrailer;

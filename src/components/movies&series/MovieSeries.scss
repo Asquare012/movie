@@ -1,0 +1,111 @@
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Movies {
+    height: 100%;
+    width: 100vw;
+    padding: 0 5% 50px 5%;
+
+
+    .Movie-Top-Title {
+        height: 50px;
+        display: flex;
+        align-items: center;
+
+        h1 {
+            font-weight: 700;
+            font-size: 22px;
+        }
+    }
+
+
+    .Movie-Search {
+        height: 100px;
+        display: flex;
+        align-items: center;
+
+        input {
+            height: 45%;
+            width: 100%;
+            border: none;
+            outline: none;
+            background-color: #f0f0f0;
+
+            font-size: 14px;
+            padding-left: 10px;
+            color: #000000;
+            font-weight: 700;
+            border-radius: 5px;
+
+            &::placeholder {
+                font-size: 14px;
+                padding-left: 5px;
+                color: #000000;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .Movie-List {
+        ol {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+
+            li {
+                list-style-type: none;
+                height: 200px;
+                min-width: 140px;
+                transition: transform ease-in-out 0.2s;
+                margin-bottom: 40px;
+
+                &:hover {
+                    transform: scale(1.05);
+                }
+
+                .Image {
+                    height: 70%;
+
+                    img {
+                        border-radius: 15px 15px 0 0;
+                    }
+                }
+
+                .Title {
+                    margin-top: 5px;
+                    display: flex;
+                    align-items: center;
+                    font-size: 16px;
+                    font-weight: 600;
+                }
+
+                .Rating {
+                    font-size: 12px;
+                    font-weight: 400;
+                    color: #161616;
+                    font-weight: 300;
+
+                    img {
+                        margin-right: 3px;
+                    }
+                }
+
+
+                .Release-date {
+                    display: flex;
+                    align-items: center;
+                    font-size: 12px;
+                    color: #161616;
+                    font-weight: 300;
+
+                    img {
+                        margin-right: 3px;
+                    }
+                }
+            }
+        }
+    }
+}

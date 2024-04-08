@@ -1,20 +1,18 @@
 // Homepage components
 import Header from "./Header";
-import Showing from "./Showing";
-import Popular from "./Popular";
-import Footer from "./Footer";
-// style
-import "./styles/Home.scss";
+import Upcoming from "./Upcoming";
+import Trending from "./Trending";
+
+import "../styles/Home.scss";
 
 const Home = () => {
   return (
     <>
       <div className="Home">
         <Header />
-        <Showing />
-        <Popular />
+        <Upcoming />
+        <Trending />
       </div>
-      <Footer />
     </>
   );
 };

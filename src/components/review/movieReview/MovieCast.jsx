@@ -1,23 +1,13 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-const Cast = () => {
+const MovieCast = () => {
   const { id } = useParams();
   const [cast, setCast] = useState([]);
 
-  const options = {
-    method: "GET",
-    headers: {
-      accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3MjIyMmM5OTI0Yzc2OTlkZmNkODkxYzYzOTU1MzBmMCIsInN1YiI6IjY1MDBlMjYzZjI5ZDY2MDEzYTNiM2U5MiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.weQOfRExY3OF3lcYVrp7-ShSHpelM0AUGhxoUObDblM",
-    },
-  };
-
   const getCast = () => {
     fetch(
-      `https://api.themoviedb.org/3/movie/${id}/credits?language=en-US`,
-      options
+      `https://api.themoviedb.org/3/movie/${id}/credits?language=en-US&api_key=72222c9924c7699dfcd891c6395530f0`
     )
       .then((response) => response.json())
       .then((data) => setCast(data.cast))
@@ -43,4 +33,4 @@ const Cast = () => {
   );
 };
 
-export default Cast;
+export default MovieCast;

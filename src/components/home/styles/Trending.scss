@@ -4,94 +4,87 @@
     align-items: center;
 }
 
-.Popular {
+.Trending {
     width: 100%;
     padding-top: 60px;
+    padding-bottom: 50px;
 
-    .Popular-Top {
-        height: 50px;
+    h1 {
+        font-weight: 700;
+        padding-left: 5%;
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .Trending-Movie,
+    .Trending-Series {
         padding: 0 5%;
         display: flex;
+        flex-direction: column;
 
-        .Top-Left {
-            width: 50%;
-            height: 100%;
+        .Movie-Title {
+            height: 30px;
             display: flex;
-            align-items: center;
-            font-size: 17px;
-            font-weight: 800;
-            color: #110E47;
-        }
 
-        .Top-Right {
-            width: 50%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            font-size: 12px;
+            .Title-Left {
+                width: 50%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                font-size: 20px;
+                font-weight: 700;
+                color: #110E47;
+            }
 
-            span {
-                border: 1px solid #AAA9B1;
-                color: #AAA9B1;
-                padding: 3px 5px;
-                border-radius: 15px;
-                cursor: pointer;
-                font-weight: 500;
-                transition: transform ease-in-out 0.2s;
+            .Title-Right {
+                width: 50%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                font-size: 12px;
 
-                &:hover,
-                &:active {
-                    transform: scale(1.1);
+                a {
+                    text-decoration: none;
+
+                    span {
+                        border: 1px solid #0a0a0a;
+                        color: #070707;
+                        padding: 3px 5px;
+                        border-radius: 15px;
+                        cursor: pointer;
+                        font-weight: 500;
+                        transition: transform ease-in-out 0.2s;
+
+                        &:hover,
+                        &:active {
+                            transform: scale(1.1);
+                        }
+                    }
                 }
             }
         }
     }
 
-    .Popular-Mid {
-        height: 50px;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        padding-left: 5%;
 
-        input {
-            height: 75%;
-            width: 95%;
-            border: none;
-            outline: none;
-            background-color: #f0f0f0;
-
-            font-size: 13px;
-            padding-left: 10px;
-            color: #000000;
-            font-weight: 700;
-            border-radius: 5px;
-
-            &::placeholder {
-                font-size: 13px;
-                padding-left: 5px;
-                color: #000000;
-                font-weight: 600;
-            }
-        }
-    }
-
-    .Popular-Bottom {
-        height: 90%;
+    .Movie-Content {
         margin-top: 20px;
-        padding-left: 5%;
 
         ol {
-            height: 100%;
-
             li {
                 list-style: none;
-                margin: 0 0 10px 0;
+                margin: 0 0 13px 0;
                 display: flex;
                 height: 160px;
+                transition: transform 0.2s ease-in-out;
 
-                .Bottom-Left {
+                &:hover,
+                &:active {
+                    transform: scale(1.02);
+                }
+
+                .Content-Left {
                     display: flex;
                     align-items: center;
 
@@ -100,7 +93,7 @@
                     }
                 }
 
-                .Bottom-Right {
+                .Content-Right {
                     padding: 0 2% 0 8px;
                     display: flex;
                     justify-content: center;

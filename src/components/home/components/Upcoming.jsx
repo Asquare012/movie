@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./styles/Showing.scss";
+import "../styles/Upcoming.scss";
 import star from "../assets/Star.png";
 
 const options = {
@@ -12,13 +12,12 @@ const options = {
   },
 };
 
-const Showing = () => {
+const Upcoming = () => {
   const [movie, setMovie] = useState([]);
   const navigate = useNavigate();
 
   const getMovie = () => {
-    const url =
-      "https://api.themoviedb.org/3/trending/movie/day?language=en-US";
+    const url = "https://api.themoviedb.org/3/movie/upcoming";
 
     fetch(url, options)
       .then((response) => response.json())
@@ -31,9 +30,9 @@ const Showing = () => {
   return (
     <div className="Showing">
       <div className="Showing-Top">
-        <div className="Top-Left">Now Showing</div>
+        <div className="Top-Left">Upcoming</div>
         <div className="Top-Right">
-          <span>See more</span>
+          <span style={{ backgroundColor: "black" }}></span>
         </div>
       </div>
       <div className="Showing-Bottom">
@@ -42,7 +41,7 @@ const Showing = () => {
             const { id, poster_path, original_title, vote_average } = movie;
 
             const handleClick = () => {
-              navigate(`/${id}`);
+              navigate(`/movie/description/${id}`);
             };
 
             return (
@@ -69,4 +68,4 @@ const Showing = () => {
   );
 };
 
-export default Showing;
+export default Upcoming;

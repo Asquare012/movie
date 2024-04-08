@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, useParams } from "react-router-dom";
-import Trailer from "./Trailer";
-import Cast from "./Cast";
-import "./styles/Review.scss";
+import SeriesTrailer from "./SeriesTrailer";
+import SeriesCast from "./SeriesCast";
+import "../Review.scss";
 import back from "../assets/back.png";
 import dot from "../assets/Dot.png";
 import book from "../assets/book.png";
 import star from "../assets/Star.png";
 
-const Review = () => {
+const SeriesReview = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState([]);
 
   const getReview = () => {
-    const url = `https://api.themoviedb.org/3/movie/${id}?api_key=72222c9924c7699dfcd891c6395530f0`;
+    const url = `https://api.themoviedb.org/3/tv/${id}?api_key=72222c9924c7699dfcd891c6395530f0`;
     fetch(url)
       .then((response) => response.json())
       .then((data) => setMovie(data))
@@ -30,7 +30,7 @@ const Review = () => {
         <div className="Top">
           <div className="Top-Nav">
             <div>
-              <NavLink to={"/"}>
+              <NavLink to={"/series"}>
                 <img src={back} alt="back" height={"25px"} width={"25px"} />
               </NavLink>
             </div>
@@ -39,13 +39,13 @@ const Review = () => {
             </div>
           </div>
           <div className="Trailer">
-            <Trailer />
+            <SeriesTrailer />
           </div>
         </div>
         <div className="Description">
           <div className="First">
             <div className="Title">
-              {movie.original_title}
+              {movie.name}
               <img src={book} alt="book" height={"22px"} />
             </div>
             <div className="Rating">
@@ -61,7 +61,7 @@ const Review = () => {
             <div className="Info">
               <div className="Info-Item">
                 Release Date <br />
-                <span>{movie.release_date}</span>
+                <span>{movie.first_air_date}</span>
               </div>
               <div className="Info-Item">
                 Language <br />
@@ -85,7 +85,7 @@ const Review = () => {
               </div>
             </div>
             <div className="Cast-Bottom">
-              <Cast />
+              <SeriesCast />
             </div>
           </div>
         </div>
@@ -94,4 +94,4 @@ const Review = () => {
   );
 };
 
-export default Review;
+export default SeriesReview;
