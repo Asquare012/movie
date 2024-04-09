@@ -14,7 +14,7 @@ const TrendingSeries = () => {
   return (
     <div className="Trending-Series">
       <div className="Movie-Title">
-        <div className="Title-Left">Series</div>
+        <div className="Title-Left">Trending series</div>
         <div className="Title-Right">
           <NavLink to={"/series"}>
             <span>See more</span>

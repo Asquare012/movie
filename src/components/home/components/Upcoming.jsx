@@ -31,14 +31,13 @@ const Upcoming = () => {
     <div className="Showing">
       <div className="Showing-Top">
         <div className="Top-Left">Upcoming</div>
-        <div className="Top-Right">
-          <span style={{ backgroundColor: "black" }}></span>
-        </div>
+        <div className="Top-Right"></div>
       </div>
       <div className="Showing-Bottom">
         <ol>
           {movie.map((movie) => {
-            const { id, poster_path, original_title, vote_average } = movie;
+            const { id, poster_path, original_title, title, vote_average } =
+              movie;
 
             const handleClick = () => {
               navigate(`/movie/description/${id}`);
@@ -49,12 +48,12 @@ const Upcoming = () => {
                 <div className="Bottom-Image">
                   <img
                     src={`https://image.tmdb.org/t/p/w500${poster_path}`}
-                    alt={original_title}
+                    alt={title || original_title}
                     height="100%"
                     width="100%"
                   />
                 </div>
-                <div className="Bottom-Title">{original_title}</div>
+                <div className="Bottom-Title">{title || original_title}</div>
                 <div className="Bottom-Review">
                   <img src={star} alt="star" height="20px" />
                   {Math.round(vote_average)}/10 IMDb

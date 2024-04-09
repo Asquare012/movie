@@ -4,8 +4,6 @@ import MovieTrailer from "./MovieTrailer";
 import MovieCast from "./MovieCast";
 import "../Review.scss";
 import back from "../assets/back.png";
-import dot from "../assets/Dot.png";
-import book from "../assets/book.png";
 import star from "../assets/Star.png";
 
 const MovieReview = () => {
@@ -34,9 +32,7 @@ const MovieReview = () => {
                 <img src={back} alt="back" height={"25px"} width={"25px"} />
               </NavLink>
             </div>
-            <div>
-              <img src={dot} alt="dot" width={"25px"} />
-            </div>
+            <div></div>
           </div>
           <div className="Trailer">
             <MovieTrailer />
@@ -44,10 +40,7 @@ const MovieReview = () => {
         </div>
         <div className="Description">
           <div className="First">
-            <div className="Title">
-              {movie.original_title}
-              <img src={book} alt="book" height={"22px"} />
-            </div>
+            <div className="Title">{movie.original_title}</div>
             <div className="Rating">
               <img src={star} alt="star" height={"20px"} />
               {Math.round(movie.vote_average)}/10 IMDb

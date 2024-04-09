@@ -11,6 +11,7 @@
 }
 
 
+
 .Review {
     height: 500px;
     width: 100%;
@@ -68,12 +69,15 @@
             }
 
             .Genre {
-                margin: 10px 10px 5px 0;
-                display: flex;
+                margin: 10px 2% 5px 0;
+                display: grid;
+                gap: 10px;
+                grid-template-columns: repeat(2, 1fr);
+                align-items: center;
 
                 span {
-                    background-color: #DBE3FF;
-                    color: #88A4E8;
+                    background-color: #e2e8fe;
+                    color: #445f9d;
                     height: 18px;
                     width: auto;
                     padding: 2px 5px;
@@ -82,6 +86,7 @@
                     margin-right: 5px;
                     font-size: 13px;
                     @include flex;
+
                 }
             }
 
@@ -160,7 +165,6 @@
                     font-weight: 500;
                     transition: transform ease-in-out 0.2s;
 
-
                     &:hover,
                     &:active {
                         transform: scale(1.1);
@@ -202,8 +206,6 @@
                         font-size: 13px;
                         font-weight: 600;
                     }
-
-
                 }
             }
         }

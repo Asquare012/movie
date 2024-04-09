@@ -5,7 +5,6 @@ import SeriesCast from "./SeriesCast";
 import "../Review.scss";
 import back from "../assets/back.png";
 import dot from "../assets/Dot.png";
-import book from "../assets/book.png";
 import star from "../assets/Star.png";
 
 const SeriesReview = () => {
@@ -44,10 +43,7 @@ const SeriesReview = () => {
         </div>
         <div className="Description">
           <div className="First">
-            <div className="Title">
-              {movie.name}
-              <img src={book} alt="book" height={"22px"} />
-            </div>
+            <div className="Title">{movie.name}</div>
             <div className="Rating">
               <img src={star} alt="star" height={"20px"} />
               {Math.round(movie.vote_average)}/10 IMDb
